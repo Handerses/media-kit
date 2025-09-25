@@ -12,7 +12,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.5.1'
     }
 }
 
@@ -40,6 +40,13 @@ android {
 
     defaultConfig {
         minSdkVersion 16
+        ndkVersion '29.0.14033849'
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true  // Для сжатых библиотек, если AGP < 8.5
+        }
     }
 
     dependencies {
